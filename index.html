@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Banner - バナーを自由に配置！ | 14日間無料トライアル | Shopifyアプリ</title>
+  <meta name="description" content="テキストも画像も、もちろんリンクを貼ることもできる！好きな場所に、好きな色で配置できるShopify用フローティングバナーアプリ。14日間無料トライアル、月額$5（年額$50）。">
+
+  <!-- Rounded Mplus 1c (Bold: 700) の読み込み -->
+  <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <div class="app-brand">
+        <img src="1.png" alt="Floating Banner" class="cat-img" style="width: 42px; height: 34px;">
+        <span>Floating Banner <small style="font-weight:500; color:#475569;">message</small></span>
+      </div>
+      <div class="header-right">
+        <span class="trial-pill">🎁 14日間無料トライアル実施中</span>
+        <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=header" class="cta-btn" target="_blank" rel="noopener">
+          無料で試してみる →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1: バナーを自由に配置！（画像1の世界観）
+       ========================================== -->
+  <section class="sec-hero">
+    <div class="container">
+      <div class="hero-top-bar">
+        <div>
+          <h1 class="headline-xl">バナーを<span class="pink">自由</span>に配置！</h1>
+          <p class="headline-sub" style="margin-bottom: 0;">テキストも画像も、もちろんリンクを貼ることもできる！</p>
+        </div>
+        <a href="#pricing" class="hero-price-badge">
+          <span class="free-tag">14日間無料</span>
+          <span>月額 <strong>$5</strong> / 年額 <strong>$50</strong>（2ヶ月分お得！）</span>
+        </a>
+      </div>
+
+      <div class="hero-composition">
+        <!-- 左：ストア画面プレビュー -->
+        <div class="store-window">
+          <div class="store-header">
+            <div class="store-nav">
+              <span>Home</span>
+              <span>Catalog</span>
+              <span>Contact</span>
+            </div>
+            <img src="1.png" alt="Store Logo" class="cat-img" style="width: 76px; height: 60px;">
+            <div class="store-icons">
+              <span>🔍</span><span>👤</span><span>🛍️</span>
+            </div>
+          </div>
+
+          <div class="biscuit-canvas" id="hero-canvas">
+            <!-- CSSビスケット装飾 -->
+            <div class="biscuit b-pink" style="top: -20px; left: 14%;"></div>
+            <div class="biscuit b-wheat" style="top: 30px; left: 26%;"></div>
+            <div class="biscuit b-green" style="top: 10px; right: 24%;"></div>
+            <div class="biscuit b-blue" style="bottom: 85px; right: 22%;"></div>
+            <div class="biscuit b-pink" style="bottom: 15px; left: 12%;"></div>
+            <div class="biscuit b-green" style="bottom: -15px; left: 36%;"></div>
+            <div class="biscuit b-wheat" style="top: 38%; right: 6%;"></div>
+
+            <!-- 白いメッセージボックス -->
+            <div class="store-msg-card">
+              <h2>好きな場所にバナーを！</h2>
+              <p>このアプリを使えば好きなページの好きな場所に自由にバナーを置くことができます。</p>
+            </div>
+
+            <!-- ストア内右下のフローティングバナー（右パネルとリアルタイム連動） -->
+            <div id="interactive-banner" class="fb-item" style="bottom: 18px; right: 18px; background: #FFB7D8; color: #000000; border-radius: 12px; padding: 14px 24px;">
+              <span class="fb-close">×</span>
+              <div id="interactive-icon" style="display:flex;">
+                <img src="1.png" alt="バナーアイコン" class="cat-img" style="width: 60px; height: 48px;">
+              </div>
+              <span id="interactive-text" style="font-size: 20px;">お得なセール開催中！</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 手書き風の青い矢印 -->
+        <svg class="blue-arrow-svg" viewBox="0 0 100 80">
+          <path d="M90 10 Q55 55 12 62" stroke="#0038FF" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M26 48 L10 62 L28 72" stroke="#0038FF" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- 右：Shopify設定カード（実際に操作可能） -->
+        <div class="ui-card">
+          <div class="ui-card-header">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <img src="1.png" alt="icon" class="cat-img" style="width: 24px; height: 20px;">
+              <div style="line-height:1.15;">
+                <strong style="font-size:0.8rem; color:#111827;">Floating Banner</strong><br>
+                <span style="font-size:0.68rem; color:#64748B;">message</span>
+              </div>
+            </div>
+            <div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div>
+          </div>
+
+          <div class="ui-sec-label">コンテンツ</div>
+          <div class="ui-row">
+            <span>バナー画像 (任意)</span>
+            <div class="cat-thumb-preview">
+              <img src="1.png" alt="1.png" class="cat-img" style="width: 68px; height: 54px;">
+              <span>1.png</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>バナーのテキスト</span>
+            <input type="text" id="hero-input-text" class="ui-input" value="お得なセール開催中！" oninput="updateHeroDemo()">
+          </div>
+          <div class="ui-row">
+            <span>レイアウト</span>
+            <select id="hero-input-layout" class="ui-select" onchange="updateHeroDemo()">
+              <option value="row">画像 左 / テキスト 右</option>
+              <option value="row-reverse">画像 右 / テキスト 左</option>
+              <option value="column">画像 上 / テキスト 下</option>
+              <option value="image">画像のみ</option>
+              <option value="text">テキストのみ</option>
+            </select>
+          </div>
+          <div class="ui-row">
+            <span>リンク先URL (任意)</span>
+            <input type="text" class="ui-input" placeholder="リンクまたは検索を貼り付ける" readonly>
+          </div>
+
+          <div class="ui-sec-label">スタイル</div>
+          <div class="ui-row">
+            <span>背景色</span>
+            <div class="ui-color-input">
+              <input type="color" id="hero-input-bg" value="#FFB7D8" oninput="updateHeroDemo()">
+              <span id="hero-label-bg">#FFB7D8</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>背景の不透明度</span>
+            <div class="ui-slider-group">
+              <input type="range" id="hero-input-opacity" min="0" max="100" value="100" oninput="updateHeroDemo()">
+              <span class="ui-val-box"><span id="hero-label-opacity">100</span> %</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>文字色</span>
+            <div class="ui-color-input">
+              <input type="color" id="hero-input-color" value="#000000" oninput="updateHeroDemo()">
+              <span id="hero-label-color">#000000</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>フォント</span>
+            <select class="ui-select">
+              <option>A  M PLUS Rounded...</option>
+            </select>
+          </div>
+          <div class="ui-row">
+            <span>フォントサイズ</span>
+            <div class="ui-slider-group">
+              <input type="range" id="hero-input-size" min="13" max="26" value="20" oninput="updateHeroDemo()">
+              <span class="ui-val-box"><span id="hero-label-size">24</span> px</span>
+            </div>
+          </div>
+          <div class="ui-row" style="margin-bottom:0;">
+            <span>角丸 (border-radius)</span>
+            <div class="ui-slider-group">
+              <input type="range" id="hero-input-radius" min="0" max="32" value="12" oninput="updateHeroDemo()">
+              <span class="ui-val-box"><span id="hero-label-radius">12</span> px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: 好きな場所に、好きな色で！（画像2の世界観）
+       ========================================== -->
+  <section class="sec-positions">
+    <div class="container">
+      <div class="overlap-showcase">
+        <!-- 左ウィンドウ：左下配置 & 画像右/テキスト左 -->
+        <div class="store-window mini-store">
+          <div class="store-header" style="height:58px;">
+            <div class="store-nav"><span>Home</span><span>Catalog</span><span>Contact</span></div>
+            <img src="1.png" alt="Logo" class="cat-img" style="width: 56px; height: 44px;">
+            <div class="store-icons"><span>🔍</span><span>👤</span><span>🛍️</span></div>
+          </div>
+          <div class="biscuit-canvas" style="min-height:320px; padding:32px;">
+            <div class="biscuit b-pink" style="top:12px; left:18%;"></div>
+            <div class="biscuit b-green" style="bottom:20px; right:25%;"></div>
+            <div class="store-msg-card" style="padding:24px; max-width:340px;">
+              <h3 style="font-size:1.3rem; margin-bottom:8px;">好きな場所にバナーを！</h3>
+              <p>このアプリを使えば好きなページの好きな場所に自由にバナーを置くことができます。</p>
+            </div>
+            <!-- 左下ラベンダー色バナー -->
+            <div class="fb-item" style="bottom: 16px; left: 16px; background: var(--banner-purple); padding: 12px 20px;">
+              <span class="fb-close">×</span>
+              <span style="font-size: 0.95rem;">画像とテキストの配置も自由</span>
+              <img src="1.png" alt="cat" class="cat-img" style="width: 50px; height: 40px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- 右ウィンドウ：中央下配置 & 画像上/テキスト下 -->
+        <div class="store-window mini-store">
+          <div class="store-header" style="height:58px;">
+            <div class="store-nav"><span>Home</span><span>Catalog</span><span>Contact</span></div>
+            <img src="1.png" alt="Logo" class="cat-img" style="width: 56px; height: 44px;">
+            <div class="store-icons"><span>🔍</span><span>👤</span><span>🛍️</span></div>
+          </div>
+          <div class="biscuit-canvas" style="min-height:320px; padding:32px;">
+            <div class="biscuit b-blue" style="top:18px; right:16%;"></div>
+            <div class="biscuit b-wheat" style="bottom:18px; left:18%;"></div>
+            <div class="store-msg-card" style="padding:24px; max-width:340px;">
+              <h3 style="font-size:1.3rem; margin-bottom:8px;">好きな場所にバナーを！</h3>
+              <p>このアプリを使えば好きなページの好きな場所に自由にバナーを置くことができます。</p>
+            </div>
+            <!-- 水色の縦積みバナー -->
+            <div class="fb-item" style="bottom: 14px; right: 26%; flex-direction: column; gap: 6px; background: var(--banner-blue); padding: 12px 22px; border-radius: 6px;">
+              <span class="fb-close">×</span>
+              <img src="1.png" alt="cat" class="cat-img" style="width: 56px; height: 44px;">
+              <span style="font-size: 0.88rem;">可能性を広げます</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="headline-xl">好きな<span class="pink">場所</span>に、好きな<span class="pink">色</span>で！</h2>
+      <p class="headline-sub" style="text-align: right; margin-bottom: 0;">
+        テキストはshopifyに入っているフォントなら自由に使えます！
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3: アイデア次第で可能性は無限大（画像3の世界観）
+       ========================================== -->
+  <section class="sec-ideas">
+    <div class="container">
+      <h2 class="headline-xl"><span class="pink">アイデア</span>次第で可能性は無限大</h2>
+
+      <div class="ideas-row">
+        <!-- Instagram カード -->
+        <div class="idea-tile">
+          <div class="idea-inner-card">
+            <span style="position:absolute; top:8px; right:12px; font-size:12px; color:#64748B;">×</span>
+            <svg width="110" height="110" viewBox="0 0 64 64" style="margin: 0 auto; display:block;">
+              <defs>
+                <linearGradient id="ig-g" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFDC80"/>
+                  <stop offset="50%" stop-color="#E1306C"/>
+                  <stop offset="100%" stop-color="#833AB4"/>
+                </linearGradient>
+              </defs>
+              <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#ig-g)"/>
+              <rect x="13" y="13" width="38" height="38" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/>
+              <circle cx="32" cy="32" r="9.5" fill="none" stroke="#fff" stroke-width="4.5"/>
+              <circle cx="44" cy="20" r="3" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="idea-caption-bar">インスタも見てね！</div>
+        </div>
+
+        <!-- LINE 背景透過カード -->
+        <div class="idea-tile">
+          <div class="idea-transparent-card">
+            <span style="position:absolute; top:0; right:14px; font-size:12px; color:#111;">×</span>
+            <div style="width:116px; height:116px; background:#06C755; border-radius:28px; margin:0 auto; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(6,199,85,0.28);">
+              <div style="background:#fff; color:#06C755; font-weight:800; font-size:1.35rem; padding:14px 16px; border-radius:50%;">LINE</div>
+            </div>
+          </div>
+          <div class="idea-caption-bar">お友達追加！</div>
+        </div>
+
+        <!-- テキストのみ：今日のラッキーカラーは赤！ -->
+        <div class="lucky-red-banner">
+          <span style="position:absolute; top:10px; right:16px; font-size:14px; color:#94A3B8;">×</span>
+          <span>今日のラッキーカラーは赤！</span>
+        </div>
+      </div>
+
+      <p class="ideas-Copy">
+        背景色を消すことができるので、<br>
+        ブランドイメージを壊すことなく配置が可能です！
+      </p>
+      <p class="ideas-note">※各種ロゴは公式からダウンロードして使用してください。</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4: 3カラム設定UI＆ページ選択（画像4の世界観）
+       ========================================== -->
+  <section class="sec-settings">
+    <div class="container">
+      <div class="three-panels-grid">
+        <!-- パネル1: コンテンツ & ダークドロップダウン -->
+        <div class="ui-card">
+          <div class="ui-sec-label" style="margin-top:0;">コンテンツ</div>
+          <div class="ui-row">
+            <span>バナー画像 (任意)</span>
+            <div class="cat-thumb-preview">
+              <img src="1.png" alt="1.png" class="cat-img" style="width: 72px; height: 56px;">
+              <span>1.png</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>バナーのテキスト</span>
+            <input type="text" class="ui-input" value="にゃん！" readonly>
+          </div>
+          <div style="margin: 12px 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span>レイアウト</span>
+              <div style="width:62%;">
+                <div class="dark-dropdown-menu">
+                  <div class="dark-dropdown-item" onclick="selectLayoutMenu(this, 'row')"> 画像 左 / テキスト 右</div>
+                  <div class="dark-dropdown-item" onclick="selectLayoutMenu(this, 'row-reverse')"> 画像 右 / テキスト 左</div>
+                  <div class="dark-dropdown-item active" onclick="selectLayoutMenu(this, 'column')">✓ 画像 上 / テキスト 下</div>
+                  <div class="dark-dropdown-item" onclick="selectLayoutMenu(this, 'image')"> 画像のみ</div>
+                  <div class="dark-dropdown-item" onclick="selectLayoutMenu(this, 'text')"> テキストのみ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>リンク先URL (任意)</span>
+            <input type="text" class="ui-input" placeholder="リンクまたは検索を貼り付ける" readonly>
+          </div>
+          <div class="ui-row" style="margin-bottom:0;">
+            <span>画像の最大サイズ</span>
+            <div class="ui-slider-group">
+              <input type="range" min="100" max="500" value="340">
+              <span class="ui-val-box">340 px</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- パネル2: スタイル（余白padding・不透明度0%設定） -->
+        <div class="ui-card">
+          <div class="ui-sec-label" style="margin-top:0;">スタイル</div>
+          <div class="ui-row">
+            <span>背景色</span>
+            <div class="ui-color-input">
+              <input type="color" value="#FFFFFF">
+              <span>#FFFFFF</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>背景の不透明度</span>
+            <div class="ui-slider-group">
+              <input type="range" min="0" max="100" value="0">
+              <span class="ui-val-box">0 %</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>文字色</span>
+            <div class="ui-color-input">
+              <input type="color" value="#FF0000">
+              <span>#FF0000</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>フォント</span>
+            <select class="ui-select"><option>A  M PLUS Rounded ...</option></select>
+          </div>
+          <div class="ui-row">
+            <span>フォントサイズ</span>
+            <div class="ui-slider-group">
+              <input type="range" min="12" max="32" value="21">
+              <span class="ui-val-box">21 px</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>角丸 (border-radius)</span>
+            <div class="ui-slider-group">
+              <input type="range" min="0" max="32" value="12">
+              <span class="ui-val-box">12 px</span>
+            </div>
+          </div>
+          <div class="ui-row">
+            <span>縦の余白 (上下padding)</span>
+            <div class="ui-slider-group">
+              <input type="range" min="0" max="40" value="15">
+              <span class="ui-val-box">15 px</span>
+            </div>
+          </div>
+          <div class="ui-row" style="margin-bottom:0;">
+            <span>横の余白 (左右padding)</span>
+            <div class="ui-slider-group">
+              <input type="range" min="0" max="50" value="28">
+              <span class="ui-val-box">28 px</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- パネル3: 表示位置 ＆ 表示するページタイプ -->
+        <div style="display:grid; gap:20px;">
+          <div class="ui-card">
+            <div class="ui-sec-label" style="margin-top:0;">表示位置</div>
+            <div class="ui-row" style="margin-bottom:0;">
+              <span>位置</span>
+              <select class="ui-select">
+                <option>右下</option>
+                <option>左下</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ui-card">
+            <div class="ui-sec-label" style="margin-top:0;">表示するページタイプ</div>
+            <div class="page-toggle-row"><span>ホームページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>商品ページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>コレクションページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>カートページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>固定ページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>ブログ / 記事ページ</span><div class="shopify-toggle" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>検索結果ページ</span><div class="shopify-toggle is-off" onclick="this.classList.toggle('is-off')"></div></div>
+            <div class="page-toggle-row"><span>その他のページ</span><div class="shopify-toggle is-off" onclick="this.classList.toggle('is-off')"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="headline-xl" style="font-size: 2.3rem;">
+        直感的な操作でバナーを配置、デザインすることができます。<br>
+        表示させるページも選べるのが嬉しい！
+      </h2>
+
+      <!-- 特定ページ（handle）指定の補足カード -->
+      <div class="handle-feature-banner">
+        <div>
+          <span style="color: var(--store-teal); font-size: 0.9rem;">★ さらに細かい配信制御にも対応</span>
+          <h3 style="font-size: 1.4rem; margin-top: 4px;">特定のページ（handle）を指定した表示・除外も自由自在！</h3>
+          <p style="font-weight: 500; font-size: 0.95rem; color: #475569; margin-top: 6px;">
+            「特定の商品ページだけでキャンペーンを告知したい」「特定の固定ページではバナーを隠したい」といった繊細なマーケティングニーズにも柔軟に対応します。
+          </p>
+        </div>
+        <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=feature_handle" class="cta-btn" target="_blank" rel="noopener">
+          14日間無料で試す →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5: シンプルで続けやすい料金プラン
+       ========================================== -->
+  <section id="pricing" class="sec-pricing">
+    <div class="container">
+      <h2 class="headline-xl">シンプルで続けやすい<span class="pink">料金プラン</span></h2>
+      <p class="headline-sub">まずは<span class="pink">14日間の無料トライアル</span>で、すべての機能をお試しいただけます！</p>
+
+      <div class="trial-banner-top">
+        <img src="1.png" alt="cat" class="cat-img" style="width: 44px; height: 35px;">
+        <span>最初の<strong>14日間は完全無料！</strong>期間中に解約すれば料金は一切かかりません。</span>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- 月額プラン -->
+        <div class="price-card">
+          <div>
+            <div class="plan-name">月額プラン</div>
+            <div class="price-num">$5 <small>/ 月</small></div>
+            <p class="plan-sub">手軽にはじめたいストア様におすすめ</p>
+            <ul class="plan-features">
+              <li>✅ <strong>14日間の無料トライアル付き</strong></li>
+              <li>✅ すべてのデザイン・フォント・余白設定</li>
+              <li>✅ ページタイプ＋特定ページ（handle）指定</li>
+              <li>✅ 背景透過（不透明度0%〜100%）対応</li>
+            </ul>
+          </div>
+          <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=pricing_monthly" class="cta-btn" style="background: var(--store-teal); box-shadow: 0 6px 20px rgba(0, 181, 173, 0.28);" target="_blank" rel="noopener">
+            14日間無料で試してみる →
+          </a>
+        </div>
+
+        <!-- 年額プラン（おすすめ） -->
+        <div class="price-card recommended">
+          <div class="save-badge">🎉 年額契約で $10（2ヶ月分）お得！</div>
+          <div>
+            <div class="plan-name"><span class="pink">年額プラン</span></div>
+            <div class="price-num"><span class="pink">$50</span> <small>/ 年</small></div>
+            <p class="plan-sub">1ヶ月あたり約$4.16！長期運用に最適</p>
+            <ul class="plan-features">
+              <li>✅ <strong>14日間の無料トライアル付き</strong></li>
+              <li>✅ 月額プランより<strong>年間$10お得</strong></li>
+              <li>✅ すべてのデザイン・フォント・余白設定</li>
+              <li>✅ ページタイプ＋特定ページ（handle）指定</li>
+            </ul>
+          </div>
+          <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=pricing_yearly" class="cta-btn" target="_blank" rel="noopener">
+            14日間無料で試してみる →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER CTA
+       ========================================== -->
+  <section class="sec-footer-cta">
+    <div class="container">
+      <div class="cta-card">
+        <img src="1.png" alt="Floating Banner" class="cat-img" style="width: 84px; height: 68px; margin: 0 auto 14px;">
+        <h2 class="headline-xl" style="font-size: 2.4rem;">お店の売上アップと顧客体験の向上を両立！</h2>
+        <p style="font-size: 1.1rem; color: #475569; margin: 16px auto 32px; max-width: 640px;">
+          14日間の無料トライアルで、あなたのShopifyストアにぴったりの追従バナーを今すぐ配置してみませんか？
+        </p>
+        <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=bottom_cta" class="cta-btn" style="font-size: 1.15rem; padding: 16px 40px;" target="_blank" rel="noopener">
+          14日間無料で「Floating Banner」を始める →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ページ右下に追従する実物バナー（ファーストビューの設定カードとリアルタイム連動） -->
+  <a href="https://apps.shopify.com/message-1?locale=ja&utm_source=lp&utm_medium=live_floating_banner" target="_blank" rel="noopener" id="page-live-banner" class="fb-item live-floating-demo" style="background: #FFB7D8; color: #000000; border-radius: 12px; padding: 14px 24px;">
+    <span class="fb-close" onclick="event.preventDefault(); this.parentElement.style.display='none';">×</span>
+    <div id="live-icon" style="display:flex;">
+      <img src="1.png" alt="cat" class="cat-img" style="width: 56px; height: 45px;">
+    </div>
+    <span id="live-text" style="font-size: 20px;">お得なセール開催中！</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
